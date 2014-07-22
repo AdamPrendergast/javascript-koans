@@ -1,12 +1,10 @@
-Solution Project to the koans by:
+Solution project to the koans by:
 
 https://github.com/SamuraiPrinciple/JavaScript-Koans
 
 
 JavaScript Koans
 ===
-
-JavaScript Koans - exercises for my JavaScript workshop.
 
 - Jasmine
 - Objects
