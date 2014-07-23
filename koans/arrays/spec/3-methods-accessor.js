@@ -38,23 +38,29 @@ describe('Arrays - accessor methods', function () {
 
 
 	it('6 - should understand join and split', function () {
-		expect(new Array(10).join('._').split('-')).toEqual(__);
+		expect(new Array(10).join('._').split('-')).toEqual(['._._._._._._._._._']);
 	});
 
 
 	
 	it('7 - should understand slice', function () {
 		var array = [1, 2, 3, 4, 5];
-		expect(array.slice(1, 4)).toEqual(__);
-		expect(array).toEqual(__);
-		expect(array.slice(1)).toEqual(__);
-		expect(array.slice(1, -1)).toEqual(__);
-		expect(array.slice(-3, -1)).toEqual(__);
+		expect(array.slice(1, 4)).toEqual([2, 3, 4]);
+		expect(array).toEqual([1, 2, 3, 4, 5]);
+		expect(array.slice(1)).toEqual([2, 3, 4, 5]);
+		expect(array.slice(1, -1)).toEqual([2, 3, 4]);
+		expect(array.slice(-3, -1)).toEqual([3, 4]);
 	});
+
+
+
 	it('8 - should understand toString', function () {
 		var array = [1, 3, 5, 'hello', 9];
 		expect(array.toString()).toBe(__);
 	});
+
+
+	
 	it('9 - should understand indexOf', function () {
 		var array = [1, 1, 3, 3, 5, 5, 7, 7];
 		expect(array.indexOf(3)).toBe(__);
