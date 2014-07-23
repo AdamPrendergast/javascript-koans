@@ -1,12 +1,19 @@
 /*jslint nomen: true*/
 /*global beforeEach, describe, expect, it, __*/
 describe('Arrays - basics', function () {
+	
+
 	var array, isArray = function (value) {
 		return value && typeof value === 'object' && value.constructor === Array;
 	};
+	
+
 	beforeEach(function () {
 		array = [1, 2, 3];
 	});
+
+
+	
 	it('1 - should understand array literals', function () {
 		var array = [1, '2', [3], false], returnArguments, args;
 		expect(isArray(array)).toBe(true);
@@ -20,6 +27,9 @@ describe('Arrays - basics', function () {
 		args = returnArguments(1, 2, 3);
 		expect(isArray(args)).toBe(false);
 	});
+	
+
+
 	it('2 - arguments recap', function () {
 
 		var returnArguments = function () {
@@ -35,10 +45,14 @@ describe('Arrays - basics', function () {
 		expect(isArray(args)).toBe(false);
 	});
 	
+	
+
 	it('3 - should understand [] operator', function () {
 		expect(array[1]).toBe(2);
 		expect(array[3]).toBe(undefined);
 	});
+
+	
 
 	it('4 - should understand [] operator', function () {
 		array[3] = 4;
@@ -46,6 +60,7 @@ describe('Arrays - basics', function () {
 	});
 
 
+	
 	it('5 - should understand length property', function () {
 		expect(array.length).toBe(3);
 		array[2] = undefined;
@@ -57,6 +72,7 @@ describe('Arrays - basics', function () {
 	});
 
 
+	
 	it('6 - should understand length property', function () {
 		var array = [1, , ,  ,5, , , , ];
 		expect(array.length).toBe(8);
@@ -64,6 +80,7 @@ describe('Arrays - basics', function () {
 	});
 
 
+	
 	it('7 - should understand delete operator', function () {
 		delete array[1];
 		expect(array[1]).toBe(undefined);
@@ -71,10 +88,12 @@ describe('Arrays - basics', function () {
 	});
 
 
+
 	it('8 - should understand delete operator', function () {
 		delete array[2];
 		expect(array.length).toBe(3);
 	});
+
 
 
 	it('9 - should understand how for and for..in loops are used for iteration', function () {
@@ -89,4 +108,6 @@ describe('Arrays - basics', function () {
 		expect(iterationsFor).toBe(1001);
 		expect(iterationsForIn).toBe(1);
 	});
+
+	
 });

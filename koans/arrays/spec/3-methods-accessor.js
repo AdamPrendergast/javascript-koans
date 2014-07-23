@@ -56,19 +56,24 @@ describe('Arrays - accessor methods', function () {
 
 	it('8 - should understand toString', function () {
 		var array = [1, 3, 5, 'hello', 9];
-		expect(array.toString()).toBe(__);
+		expect(array.toString()).toBe('1,3,5,hello,9');
 	});
 
 
-	
+
 	it('9 - should understand indexOf', function () {
 		var array = [1, 1, 3, 3, 5, 5, 7, 7];
-		expect(array.indexOf(3)).toBe(__);
-		expect(array.indexOf(2)).toBe(__);
+		expect(array.indexOf(3)).toBe(2);
+		expect(array.indexOf(2)).toBe(-1);
 	});
+
+
+
 	it('10 - should understand lastIndexOf', function () {
 		var array = [1, 1, 3, 3, 5, 5, 7, 7];
-		expect(array.lastIndexOf(3)).toBe(__);
-		expect(array.lastIndexOf(2)).toBe(__);
+		expect(array.lastIndexOf(3)).toBe(3);
+		expect(array.lastIndexOf(2)).toBe(-1);
 	});
+
+
 });
