@@ -2,6 +2,7 @@
 /*global describe, expect, it, __*/
 describe('Enumerating properties', function () {
 	'use strict';
+
 	it('1 - should understand for-in loop', function () {
 		var samurai = {
 			name: 'Myamoto',
@@ -23,8 +24,9 @@ describe('Enumerating properties', function () {
 				enumerableProperties += 1;
 			}
 		}
-		expect(properties).toBe(__);
-		expect(ownProperties).toBe(__);
-		expect(enumerableProperties).toBe(__);
+		expect(properties).toBe(4);
+		expect(ownProperties).toBe(4);
+		expect(enumerableProperties).toBe(4);
 	});
+
 });
