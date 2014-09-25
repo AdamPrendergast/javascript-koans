@@ -86,14 +86,18 @@ describe('Invocation patterns', function () {
 
 		it('8 - should understand constructor invocation pattern', function () {
 			var Constructor1 = aFunction, Constructor2 = samurai.aMethod, s1, s2, s3, s4;
+
 			s1 = new Constructor1();
-			expect(storedThis).toBe(__);
+			expect(storedThis).toBe(s1);
+
 			s2 = new Constructor2();
-			expect(storedThis).toBe(__);
+			expect(storedThis).toBe(s2);
+
 			s3 = new aFunction();
-			expect(storedThis).toBe(__);
+			expect(storedThis).toBe(s3);
+
 			s4 = new samurai.aMethod();
-			expect(storedThis).toBe(__);
+			expect(storedThis).toBe(s4);
 		});
 
 		it('9 - should understand constructor invocation pattern', function () {
@@ -105,15 +109,15 @@ describe('Invocation patterns', function () {
 					name = value;
 				};
 			}, name = 'Myamoto', samurai = new Samurai(name);
-			expect(name).toBe(__);
-			expect(samurai.name).toBe(__);
-			expect(samurai.getName()).toBe(__);
+			expect(name).toBe('Myamoto');
+			expect(samurai.name).toBe(undefined);
+			expect(samurai.getName()).toBe('Myamoto');
 			samurai.setName('Hattori');
-			expect(name).toBe(__);
-			expect(samurai.getName()).toBe(__);
+			expect(name).toBe('Myamoto');
+			expect(samurai.getName()).toBe('Hattori');
 			samurai.name = 'Myamoto';
-			expect(samurai.name).toBe(__);
-			expect(samurai.getName()).toBe(__);
+			expect(samurai.name).toBe('Myamoto');
+			expect(samurai.getName()).toBe('Hattori');
 		});
 
 		it('10 - should understand instanceof', function () {
@@ -125,12 +129,12 @@ describe('Invocation patterns', function () {
 					name = value;
 				};
 			}, samurai = new Samurai('Myamoto');
-			expect(samurai instanceof Samurai).toBe(__);
-			expect(samurai instanceof Object).toBe(__);
-			expect(samurai instanceof Array).toBe(__);
-			expect(samurai.constructor).toBe(__);
+			expect(samurai instanceof Samurai).toBe(true);
+			expect(samurai instanceof Object).toBe(true);
+			expect(samurai instanceof Array).toBe(false);
+			expect(samurai.constructor).toBe(Samurai);
 		});
-		
+
 	});
 
 	describe('call/apply', function () {
@@ -139,9 +143,9 @@ describe('Invocation patterns', function () {
 				aMethod: aFunction
 			}, samurai3 = {};
 			samurai.aMethod.call(samurai2);
-			expect(storedThis).toBe(__);
+			expect(storedThis).toBe(samurai2);
 			samurai.aMethod.apply(samurai3, []);
-			expect(storedThis).toBe(__);
+			expect(storedThis).toBe(samurai3);
 		});
 	});
 
