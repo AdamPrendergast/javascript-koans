@@ -6,11 +6,13 @@ describe('Warmup - timers and asynchronous specs', function () {
 		tip: if change describe into xdescribe the suite will no longer be executed
 		you may wish to do that when you move onto the second part of the assignement (because this is a long running suite)
 	*/
+
 	it('0 - should understand why we need asynchronous specs (so that this spec doesnt just pass)', function () {
 		setTimeout(function () {
 			expect(1).toBe(2);
 		}, 100);
 	});
+
 	it('1 - should understand timers', function (done) {
 		var i = 0, t0 = Date.now();
 		setTimeout(function () {
@@ -31,6 +33,7 @@ describe('Warmup - timers and asynchronous specs', function () {
 		console.log(3, i, Date.now() - t0);
 		expect(i).toBe(__);
 	});
+
 	it('2 - should understand timers', function (done) {
 		var i = 0, t0 = Date.now();
 		expect(i).toBe(__);
@@ -49,6 +52,7 @@ describe('Warmup - timers and asynchronous specs', function () {
 		console.log(3, i, Date.now() - t0);
 		expect(i).toBe(__);
 	});
+
 	it('3 - should understand timers', function (done) {
 		var i = 0, loopDueTime = Date.now() + 1000;
 		setTimeout(function () {
@@ -64,6 +68,7 @@ describe('Warmup - timers and asynchronous specs', function () {
 		expect(i).toBe(__);
 	});
 });
+
 describe('Closure', function (done) {
 	'use strict';
 	it('1 - should understand loop and closure', function (done) {

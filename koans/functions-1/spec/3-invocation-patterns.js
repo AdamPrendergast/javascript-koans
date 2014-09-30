@@ -154,6 +154,6 @@ describe('Invocation patterns', function () {
 		It's commented out because it is (in some browsers) a long running-test.
 	*/
 	it('12 - should understand invocation patterns', function () {
-		//expect(this).toBe(__);//what have you expected to happen here? what happened and why? discuss with your pair!
+		expect(this).toBe(function);//what have you expected to happen here? what happened and why? discuss with your pair!
 	});
 });
